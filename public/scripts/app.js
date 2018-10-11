@@ -41,6 +41,7 @@ $(document).ready(function() {
 
     $tweet.append(`
         <footer>
+          <div class="counter">0 likes</div>
           <div class="date"> ${daysBack} Days Ago</div>
           <div class="icons">
             <i class="icon ion-md-heart"></i>
