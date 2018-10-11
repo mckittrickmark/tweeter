@@ -8,63 +8,20 @@
 
 
 $(document).ready(function() {
-  const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
+
  function renderTweets(tweetArray) {
+    $('#tweetsContainer').empty()
     for (tweet of tweetArray) {
       console.log(tweet)
       var $tweet = createTweetElement(tweet)
-      $('#tweetsContainer').append($tweet);
+      $('#tweetsContainer').prepend($tweet);
     }
 
   }
 
-
   function createTweetElement(tweetData) {
+    var $text = tweetData.content.text
+
     var $tweet = $("<article>").addClass("tweet")
     $tweet.append(`
         <header>
@@ -74,7 +31,9 @@ $(document).ready(function() {
         </header>`)
     $tweet.append(`
         <div class="tweetText">
+          <p>
           ${tweetData.content.text}
+          </p>
         </div>`)
     var today = new Date()
     var tweetDay = new Date(tweetData.created_at)
@@ -91,6 +50,68 @@ $(document).ready(function() {
         </footer>`)
     return $tweet
   }
-  renderTweets(data)
+
+  function loadTweets () {
+    var $tweetData = $.getJSON('/tweets', function (data) {
+      var items = []
+      $.each( data, function(obj) {
+        items.push(data[obj])
+      })
+      renderTweets(items)
+    })
+
+
+  }
+loadTweets()
+
+
+
+  $("section.new-tweet form").on("submit", function(event) {
+    event.preventDefault()
+    $(this).find("div.errorCatch").empty()
+    $(this).find("div.errorCatch").slideUp()
+
+    var inputVal = $(event.target).find("textarea").val()
+    var cleanText = escape($(this).find("textarea").val())
+    $(this).find("textarea").val(cleanText)
+    if (inputVal.length > 1 && inputVal.length < 141) {
+      var serTweet = $(this).serialize()
+      $.post('/tweets', serTweet).done(loadTweets)
+      $(event.target).find("textarea").val("")
+
+       // does this need to be asyc???
+
+    } else if (inputVal.length > 140) {
+      $(this).find("div.errorCatch").slideDown()
+      $(this).find("div.errorCatch").append("<p>Your Tweet is too long. 140 characters is the max.<p>")
+    }
+    else {
+      $(this).find("div.errorCatch").slideDown()
+      $(this).find("div.errorCatch").append("<p>Your Tweet is empty. Add something to tweet!<p>")
+    }
+
+
+
+  })
+
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+var composeUp = 0
+  $("#nav-bar div.buttonContainer button#compose").click( function () {
+    if (composeUp === 0) {
+      composeUp = 1
+      console.log("Click")
+      $("section.new-tweet").slideUp()
+    } else {
+      composeUp = 0
+      $("section.new-tweet").slideDown()
+      $("section.new-tweet form textarea").select()
+      window.scrollTo(0,0)
+    }
+  })
 
 })

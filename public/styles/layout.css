@@ -69,8 +69,12 @@ main section form .counter {
   margin: 0 .5em 0 0;
 }
 
+main section form div.errorCatch {
+  margin: .5em .5em ;
+}
+
 #tweetsContainer {
-  margin: 2em 2em 2em 2em;
+  margin: 0em 2em 2em 0em;
 }
 
 article.tweet {
@@ -78,6 +82,7 @@ article.tweet {
   border: solid rgb(183, 183, 183);
   border-width: 1px;
   border-radius: 5px;
+  margin: 0em 0em 2em 2em;
 }
 
 article.tweet:hover {
@@ -123,6 +128,8 @@ article.tweet header span.name {
   display: inline-block;
   font-size: 150%;
   opacity: 0.7;
+  margin: .3em 0em 0em 0em;
+  text-align: center;
 
 }
 
@@ -144,8 +151,11 @@ article.tweet div.tweetText {
 }
 
 
-article.tweet p.tweetText {
+article.tweet div.tweetText p {
   height: 60px;
+  width: 360px;
+  word-wrap: break-word;
+
 }
 
 article.tweet footer:before {

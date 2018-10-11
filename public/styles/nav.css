@@ -8,6 +8,7 @@ nav {
   height: 80px;
   background-color: #00a087;
   color: #e8fdff;
+  z-index: 1000;
 }
 
 #nav-bar .logo {
@@ -23,3 +24,28 @@ nav {
   font-size: 300%;
   vertical-align: top;
 }
+
+#nav-bar div.buttonContainer {
+  align-items: center;
+  float: right;
+  background-color: #00a087;
+}
+
+#nav-bar #compose {
+  vertical-align: middle;
+  align-items: center;
+  height: 4em;
+  margin: .5em 0em;
+  color: green;
+  border: solid black;
+  border-width: thin;
+  border-radius: .5em;
+}
+
+#nav-bar #compose:hover {
+  color: black;
+}
+
+
+
+
