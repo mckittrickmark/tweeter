@@ -1,0 +1,202 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  box-sizing: border-box;
+
+  body {
+    margin: 100px 10px;
+    color: #244751;
+    background-color: #eee;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    main {
+      width: 450px;
+      margin: auto;
+      background-color: rgb(255, 255, 255);
+
+      section.new-tweet {
+        margin: 2em 2em 2em 2em;
+        border: solid;
+        border-radius: 5px;
+        border-width: thin;
+        border-color: gray;
+        background-color: #eee;
+
+        h2 {
+         padding-left: 10px;
+        }
+
+        h2:after {
+          content: ' ';
+          display: block;
+
+          left:100%;
+          width:95%;
+          height:2px;
+          margin-top:-1px;
+          background:black;
+        }
+        form {
+          textarea {
+            width: 93%;
+            margin: 0 1em;
+            padding: .25em;
+          }
+
+          input {
+            margin: .5em 1em .5em 1em;
+          }
+
+          .counter {
+            float: right;
+            margin: 0 .5em 0 0;
+          }
+          div.errorCatch {
+            margin: .5em .5em ;
+          }
+        }
+
+      }
+      section #tweetsContainer {
+        margin: 0em 2em 2em 0em;
+
+        article.tweet {
+          background-color: rgb(255, 255, 255);
+          border: solid rgb(183, 183, 183);
+          border-width: 1px;
+          border-radius: 5px;
+          margin: 0em 0em 2em 2em;
+
+
+
+          article.tweet header {
+            background-color: #eee;
+            height: 50px;
+
+
+            article.tweet header img.avatar {
+              height: 35px;
+              width: 35px;
+              margin: 8px 8px;
+              vertical-align: middle;
+              border: 2px solid black;
+              border-radius: 3px;
+              border-width: 1px;
+              background-color: rgb(255, 255, 255);
+              opacity: 0.7;
+            }
+
+            article.tweet header span.name {
+              display: inline-block;
+              font-size: 150%;
+              opacity: 0.7;
+              margin: .3em 0em 0em 0em;
+              text-align: center;
+            }
+
+            article.tweet header span.handle {
+              display: inline-block;
+              font-size: 100%;
+              float: right;
+              color: rgb(71, 70, 70);
+              margin: 10px 5px 0px 0px;
+              opacity: 0.7;
+            }
+
+            article.tweet div.tweetText {
+              display: flex;
+              align-items: center;
+              margin: 5px;
+              height: 80px;
+            }
+
+            article.tweet div.tweetText p {
+              height: 60px;
+              width: 360px;
+              word-wrap: break-word;
+            }
+
+          }
+
+          article.tweet footer {
+            height: 60px;
+
+            article.tweet footer:before {
+              content: ' ';
+              display: block;
+              left:100%;
+              width:100%;
+              height: 1px;
+              background:black;
+            }
+
+            article.tweet footer div.likeCounter {
+              display: block;
+              text-align: right;
+              color: rgb(255,255,255);
+              font-size: 85%;
+              margin: .2em .5em 0em 0em;
+              opacity: 100%;
+            }
+
+            article.tweet footer div.date {
+              display: inline-block;
+              /*align-items: center;*/
+              vertical-align: bottom;
+              margin: 2px 5px 5px 5px;
+              height: 40px;
+            }
+
+            article.tweet footer div.icons {
+              display: none;
+              float: right;
+              margin: 10px;
+            }
+          }
+        }
+
+        article.tweet:hover {
+            border: solid rgb(112, 109, 109);
+            border-width: 1px;
+            border-radius: 5px;
+
+
+          header img.avatar {
+            opacity: 1.0;
+          }
+
+          header span.name {
+            opacity: 1.0;
+          }
+
+          header span.handle {
+            opacity: 1.0;
+          }
+
+          footer div.icons {
+            display: inline-block;
+          }
+
+          footer div.likeCounter {
+            color: rgb(0,0,0);
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
+
+@media all and (max-width: 600px){
+  main {
+    width: 100%;
+  }
+
+
+}
+

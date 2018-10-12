@@ -46,6 +46,23 @@ nav {
   color: black;
 }
 
+@media (max-width: 600px){
+  #nav-bar .logo {
+  float:"Left";
+  height: 60px;
+  width: 60px;
+  margin: 0px 3px;
+  }
+  #nav-bar .header {
+    height: 80px;
+    margin: 0px 5px;
+    line-height: 80px  ;
+    font-size: 150%;
+    vertical-align: top;
+  }
+  #nav-bar button {
+    font-size: 50%;
+  }
 
-
+}
 

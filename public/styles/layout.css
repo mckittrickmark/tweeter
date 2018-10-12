@@ -81,14 +81,14 @@ article.tweet {
   background-color: rgb(255, 255, 255);
   border: solid rgb(183, 183, 183);
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: .25em;
   margin: 0em 0em 2em 2em;
 }
 
 article.tweet:hover {
   border: solid rgb(112, 109, 109);
-  border-width: 1px;
-  border-radius: 5px;
+  border-width: .1em;
+  border-radius: .25em;
 }
 
 article.tweet:hover header img.avatar {
@@ -107,10 +107,13 @@ article.tweet:hover footer div.icons {
   display: inline-block;
 }
 
+article.tweet:hover footer div.likeCounter {
+  color: rgb(0,0,0);
+}
 
 article.tweet header {
   background-color: #eee;
-  height: 50px;
+  height: 3.25em;
 }
 article.tweet header img.avatar {
   height: 35px;
@@ -171,10 +174,21 @@ article.tweet footer {
   height: 60px;
 }
 
+article.tweet footer div.likeCounter {
+  display: block;
+  text-align: right;
+  color: rgb(255,255,255);
+  font-size: 85%;
+  margin: .2em .5em 0em 0em;
+  opacity: 100%;
+}
+
+
 article.tweet footer div.date {
   display: inline-block;
   /*align-items: center;*/
-  margin: 5px;
+  vertical-align: bottom;
+  margin: 2px 5px 5px 5px;
   height: 40px;
 }
 
@@ -184,7 +198,16 @@ article.tweet footer div.icons {
   margin: 10px;
 }
 
+@media (max-width:600px){
+  main{
+    width: 100%;
+    font-size: 1em;
+  }
+  footer {
+    font-size: .75em;
+  }
 
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

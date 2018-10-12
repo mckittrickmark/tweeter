@@ -1,0 +1,157 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+html body {
+  margin: 100px 10px;
+  color: #244751;
+  background-color: #eee;
+  font-family: "Roboto Condensed", sans-serif;
+}
+html body main {
+  width: 450px;
+  margin: auto;
+  background-color: white;
+}
+html body main section.new-tweet {
+  margin: 2em 2em 2em 2em;
+  border: solid;
+  border-radius: 5px;
+  border-width: thin;
+  border-color: gray;
+  background-color: #eee;
+}
+html body main section.new-tweet h2 {
+  padding-left: 10px;
+}
+html body main section.new-tweet h2:after {
+  content: " ";
+  display: block;
+  left: 100%;
+  width: 95%;
+  height: 2px;
+  margin-top: -1px;
+  background: black;
+}
+html body main section.new-tweet form textarea {
+  width: 93%;
+  margin: 0 1em;
+  padding: 0.25em;
+}
+html body main section.new-tweet form input {
+  margin: 0.5em 1em 0.5em 1em;
+}
+html body main section.new-tweet form .counter {
+  float: right;
+  margin: 0 0.5em 0 0;
+}
+html body main section.new-tweet form div.errorCatch {
+  margin: 0.5em 0.5em;
+}
+html body main section #tweetsContainer {
+  margin: 0em 2em 2em 0em;
+}
+html body main section #tweetsContainer article.tweet {
+  background-color: white;
+  border: solid #b7b7b7;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 0em 0em 2em 2em;
+}
+html body main section #tweetsContainer article.tweet article.tweet header {
+  background-color: #eee;
+  height: 50px;
+}
+html body main section #tweetsContainer article.tweet article.tweet header article.tweet header img.avatar {
+  height: 35px;
+  width: 35px;
+  margin: 8px 8px;
+  vertical-align: middle;
+  border: 2px solid black;
+  border-radius: 3px;
+  border-width: 1px;
+  background-color: white;
+  opacity: 0.7;
+}
+html body main section #tweetsContainer article.tweet article.tweet header article.tweet header span.name {
+  display: inline-block;
+  font-size: 150%;
+  opacity: 0.7;
+  margin: 0.3em 0em 0em 0em;
+  text-align: center;
+}
+html body main section #tweetsContainer article.tweet article.tweet header article.tweet header span.handle {
+  display: inline-block;
+  font-size: 100%;
+  float: right;
+  color: #474646;
+  margin: 10px 5px 0px 0px;
+  opacity: 0.7;
+}
+html body main section #tweetsContainer article.tweet article.tweet header article.tweet div.tweetText {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  height: 80px;
+}
+html body main section #tweetsContainer article.tweet article.tweet header article.tweet div.tweetText p {
+  height: 60px;
+  width: 360px;
+  word-wrap: break-word;
+}
+html body main section #tweetsContainer article.tweet article.tweet footer {
+  height: 60px;
+}
+html body main section #tweetsContainer article.tweet article.tweet footer article.tweet footer:before {
+  content: " ";
+  display: block;
+  left: 100%;
+  width: 100%;
+  height: 1px;
+  background: black;
+}
+html body main section #tweetsContainer article.tweet article.tweet footer article.tweet footer div.likeCounter {
+  display: block;
+  text-align: right;
+  color: white;
+  font-size: 85%;
+  margin: 0.2em 0.5em 0em 0em;
+  opacity: 100%;
+}
+html body main section #tweetsContainer article.tweet article.tweet footer article.tweet footer div.date {
+  display: inline-block;
+  /*align-items: center;*/
+  vertical-align: bottom;
+  margin: 2px 5px 5px 5px;
+  height: 40px;
+}
+html body main section #tweetsContainer article.tweet article.tweet footer article.tweet footer div.icons {
+  display: none;
+  float: right;
+  margin: 10px;
+}
+html body main section #tweetsContainer article.tweet:hover {
+  border: solid #706d6d;
+  border-width: 1px;
+  border-radius: 5px;
+}
+html body main section #tweetsContainer article.tweet:hover header img.avatar {
+  opacity: 1;
+}
+html body main section #tweetsContainer article.tweet:hover header span.name {
+  opacity: 1;
+}
+html body main section #tweetsContainer article.tweet:hover header span.handle {
+  opacity: 1;
+}
+html body main section #tweetsContainer article.tweet:hover footer div.icons {
+  display: inline-block;
+}
+html body main section #tweetsContainer article.tweet:hover footer div.likeCounter {
+  color: black;
+}
+
+/*# sourceMappingURL=output.css.map */
