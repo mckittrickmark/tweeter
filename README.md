@@ -11,8 +11,8 @@ This repository is the starter code for the project: Students will fork and clon
  - MondgoDB connected
 
 ## Screenshots
-!["Screenshot of Desktop Version"]()
-
+!["Screenshot of Desktop Version"](https://github.com/mckittrickmark/tweeter/blob/master/public/images/Screen%20Shot%202018-10-12%20at%205.53.58%20PM.png)
+!["Screenshot of Mobile Version"](https://github.com/mckittrickmark/tweeter/blob/master/public/images/Screen%20Shot%202018-10-12%20at%205.53.31%20PM.png)
 
 
 ## Dependencies
